@@ -1,5 +1,9 @@
 # Ingredient Intelligence: Sephora Product & Review Analytics
 
+## Live Demo
+
+[Open the Streamlit app](https://sephora-ingredient-intelligence-bhuxriu5r5k79yanwwp5kx.streamlit.app)
+
 An interactive Streamlit dashboard analyzing Sephora product ingredients, surfactant trends, brand formulation profiles, pricing patterns, and customer review language.
 
 ## Project Overview
@@ -40,18 +44,16 @@ The app is designed as a portfolio project for data science, data analytics, and
 
 Source: Public Sephora product and skincare review dataset from Kaggle.
 
-Main files used:
+Main files included in this repository:
 
 - `product_info.csv`
-- `reviews_0-250.csv`
-- `reviews_250-500.csv`
-- `reviews_500-750.csv`
-- `reviews_750-1250.csv`
-- `reviews_1250-end.csv`
+- `reviews_sample.csv`
 
-The product catalog includes product names, brands, ingredients, prices, ratings, categories, and product-level review counts. The review files include customer review text, ratings, recommendation flags, and product IDs.
+The original Kaggle dataset contains five large review CSV files with about 1.1M total review records. For GitHub and Streamlit Cloud deployment, this repository uses a 100,000-row sampled review file. The app still displays the full dataset scale where relevant, while the deployed review-text mining runs on the included sample.
 
-Note: Some brands appear in the product catalog but do not have matching detailed review-text rows in the review files. In those cases, the app still shows product-level catalog metrics, but Review Intelligence displays a data coverage message.
+The product catalog includes product names, brands, ingredients, prices, ratings, categories, and product-level review counts. The review sample includes customer review text, ratings, recommendation flags, and product IDs.
+
+Note: Some brands appear in the product catalog but do not have matching detailed review-text rows in the sampled review file. In those cases, the app still shows product-level catalog metrics, but Review Intelligence displays a data coverage message.
 
 ## Methods Used
 
@@ -84,20 +86,19 @@ Mild / green surfactants:
 ## How To Run Locally
 
 1. Clone or download this project folder.
-2. Place the Sephora CSV files in the same folder as `app.py`.
-3. Install dependencies:
+2. Install dependencies:
 
 ```bash
 pip3 install -r requirements.txt
 ```
 
-4. Start the Streamlit app:
+3. Start the Streamlit app:
 
 ```bash
 streamlit run app.py
 ```
 
-5. Open the local URL shown by Streamlit, usually:
+4. Open the local URL shown by Streamlit, usually:
 
 ```text
 http://localhost:8501
@@ -127,4 +128,5 @@ It is intended to show more than generic dashboarding: the analytical framing is
 - Add historical product trend data if available.
 - Expand ingredient detection beyond surfactants to preservatives, actives, oils, fragrance allergens, and claims.
 - Add clustering or topic modeling for review themes.
-- Deploy with a proper data-hosting strategy for large review CSV files.
+- Add full-dataset cloud storage for all review CSV files.
+- Add screenshots or a short GIF demo to the README.
