@@ -249,6 +249,7 @@ def load_data():
     return products, reviews
 
 products, reviews = load_data()
+FULL_REVIEW_COUNT = 1_094_411
 
 MILD = ['cocamidopropyl betaine','coco-glucoside','decyl glucoside',
         'sodium cocoyl isethionate','lauryl glucoside','disodium laureth sulfosuccinate']
@@ -361,7 +362,7 @@ st.markdown(f"""
     <div class="hero-right">
         <div class="hero-desc">
             A data-driven analysis of surfactant trends across {len(products):,} Sephora 
-            products and {len(reviews)/1_000_000:.1f}M consumer reviews — revealing 
+            products and {FULL_REVIEW_COUNT/1_000_000:.1f}M dataset reviews — revealing 
             the decisive shift from traditional sulfates to green chemistry alternatives 
             in premium personal care.
         </div>
@@ -377,8 +378,8 @@ st.markdown(f"""
         <div class="stat-label">Products Analyzed</div>
     </div>
     <div class="stat-cell">
-        <div class="stat-num">{len(reviews)/1_000_000:.1f}M</div>
-        <div class="stat-label">Consumer Reviews</div>
+        <div class="stat-num">{FULL_REVIEW_COUNT/1_000_000:.1f}M</div>
+        <div class="stat-label">Dataset Reviews</div>
     </div>
     <div class="stat-cell">
         <div class="stat-num">{mild_count}</div>
